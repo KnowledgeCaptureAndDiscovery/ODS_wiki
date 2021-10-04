@@ -12,9 +12,11 @@ services:
     build:
       context: ./enigma-wiki/
       dockerfile: Dockerfile
+    extra_hosts:
++     - "host.docker.internal:host-gateway"
     restart: always
     ports:
-      - 8080:80
+      - 8083:80
     links:
       - database
       #- fuseki

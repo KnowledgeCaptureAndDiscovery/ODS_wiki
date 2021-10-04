@@ -19,18 +19,18 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 # $wgDisableOutputCompression = true;
 
 $wgSitename = "Enigma wiki";
-$customName = "enigma_dev";
+$customName = "enigma_pd";
 
 # Virtual path. This directory MUST be different from the one used in $wgScriptPath
-$wgArticlePath = "/$customName/$1";    
-$wgUsePathInfo = true;
+#$wgArticlePath = "/$customName/$1";    
+#$wgUsePathInfo = true;
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
 ## For more information on customizing the URLs
 ## (like /w/index.php/Page_title to /wiki/Page_title) please see:
 ## https://www.mediawiki.org/wiki/Manual:Short_URL
-$wgScriptPath = "";
+$wgScriptPath = "/enigma_pd";
 
 
 ## The URL path to static resources (images, scripts, etc.)
@@ -153,8 +153,8 @@ $smwgCacheType = CACHE_NONE;
 
 $smwgDefaultStore = 'SMWSparqlStore';
 $smwgSparqlDatabaseConnector = 'fuseki';
-$smwgSparqlQueryEndpoint = 'http://host.docker.internal:3030/enigma_wiki/query';
-$smwgSparqlUpdateEndpoint = 'http://host.docker.internal:3030/enigma_wiki/update';
+$smwgSparqlQueryEndpoint = 'http://host.docker.internal:3030/enigma_pd/query';
+$smwgSparqlUpdateEndpoint = 'http://host.docker.internal:3030/enigma_pd/update';
 $smwgSparqlDataEndpoint = '';
 
 require_once "$IP/extensions/PageObjectModel/PageObjectModel.php";
