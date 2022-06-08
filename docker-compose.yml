@@ -12,16 +12,12 @@ services:
     build:
       context: ./enigma-wiki/
       dockerfile: Dockerfile
-    extra_hosts:
-+     - "host.docker.internal:host-gateway"
     restart: always
-    ports:
-      - 8083:80
-    links:
+    depends_on:
       - database
-      #- fuseki
-    #volumes:
-      #- /var/www/html/images
-#  fuseki:
-#    image: stain/jena-fuseki
-#    restart: always
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - ${PORT}:80
+    volumes:
+      - ./images:/var/www/html/images
